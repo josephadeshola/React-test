@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import DisplayVan from "./DisplayVan";
+import baseUrl from "../BaseUrl"
 import { useNavigate } from "react-router-dom";
 
 
@@ -11,9 +11,9 @@ const Vans = () => {
   const [vans, setVans] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/vans")
+      .get(baseUrl + "/api/vans")
       .then((res) => {
-        // console.log(res.data, "find data");
+        console.log(res.data, "find data");
         setVans(res.data);
       })
       .catch((err) => {
