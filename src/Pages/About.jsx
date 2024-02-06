@@ -1,19 +1,18 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-
+import image from '../assets/image 54.png'
 const About = () => {
   return (
     <div>
       <Navbar />
       <div className="w-full">
-        <div className="row">
           <img
-            className="about-img mt-5"
-            src="src/assets/image 54.png"
+            className="about-img w-full mt-5"
+            src={image}
             alt=""
           />
-        </div>
+        
       </div>
       <div className="mx-auto px-4  bg-orange-50  py-5">
         <p className="text-4xl mt-4 mx-auto fw-bold ">

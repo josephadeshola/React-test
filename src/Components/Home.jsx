@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import image from '../assets/image 53.png'
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
         </div>
         <img
           className="col-12 mt-4 homeImg"
-          src="src/assets/image 53.png"
+          src={image}
           alt=""
         />
       </div>
