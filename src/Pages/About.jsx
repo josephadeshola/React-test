@@ -8,13 +8,13 @@ const About = () => {
       <Navbar />
       <div className="w-full">
           <img
-            className="about-img w-full mt-5"
+            className="about-img md:h-auto h-60  w-full mt-5"
             src={image}
             alt=""
           />
         
       </div>
-      <div className="mx-auto px-4  bg-orange-50  py-5">
+      <div className="mx-auto px-4  bg-orange-50 ">
         <p className="text-4xl mt-4 mx-auto fw-bold ">
           Don’t squeeze in a sedan when you could relax in a van.
         </p>

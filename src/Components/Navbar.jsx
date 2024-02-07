@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   const isSignin = location.pathname === "/login";
-  return (
+   return (
     <div>
       <nav className="bg-white fixed-top  w-full py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ const Navbar = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 {isSignin && (
                   <Link
-                    to="/about"
+                    to="/host"
                     className="text-gray-600 px-3 py-2 rounded-md text-sm font-semibold"
                   >
                     Host
@@ -39,12 +39,12 @@ const Navbar = () => {
                 </Link>
                 {isSignin && (
                   <Link
-                    to="/vans"
+                    to={"/profile"}
                     className="text-gray-600 text-2md px-3 py-2 rounded-md text-sm font-semibold"
                   >
                     <i class="bi bi-person-circle"></i>
                   </Link>
-                )}
+                )} 
               </div>
             </div>
           </div>

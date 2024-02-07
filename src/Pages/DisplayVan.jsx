@@ -3,13 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-useState;
 const DisplayVan = () => {
     const navigate=useNavigate();
   const location = useLocation();
     const loginVAn=()=>{
         navigate("/login")
     }
+    
   return (
     <div>
         <Navbar/>

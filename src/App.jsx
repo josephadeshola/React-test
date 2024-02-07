@@ -8,6 +8,10 @@ import Vans from "./Pages/Vans";
 import DisplayVan from "./Pages/DisplayVan";
 import Signin from "./Pages/Signin";
 import Errorpage from "./Pages/Errorpage";
+import Host from "./Pages/Host";
+import HostVan from "./Pages/HostVan";
+import HostvanView from "./Pages/HostvanView";
+
 function App() {
   return (
     <>
@@ -17,6 +21,10 @@ function App() {
       <Route path="/vans" element={<Vans/>}></Route>
       <Route path="/view/van" element={<DisplayVan/>}></Route>
       <Route path="/login" element={<Signin/>}></Route>
+      <Route path="/host" element={<Host />}></Route>
+      <Route path="/host/vans" element={<HostVan />}></Route>
+      <Route path="/host/vans/123" element={<HostvanView />}></Route>
+  
       <Route path="*" element={<Errorpage />}></Route>
     </Routes>
     </>
