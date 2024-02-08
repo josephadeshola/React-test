@@ -13,7 +13,7 @@ const Vans = () => {
     axios
       .get(baseUrl + "/vans")
       .then((res) => {
-        // console.log(res.data, "find data");
+        console.log(res.data, "find data");
         setVans(res.data);
       })
       .catch((err) => {

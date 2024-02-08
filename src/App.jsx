@@ -12,6 +12,7 @@ import Host from "./Pages/Host";
 import HostVan from "./Pages/HostVan";
 import HostvanView from "./Pages/HostvanView";
 import HoseReview from "./Pages/HoseReview";
+import Income from "./Pages/Income";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/host/vans" element={<HostVan />}></Route>
       <Route path="/host/vans/:id" element={<HostvanView />}></Route>
       <Route path="/host/reviews" element={<HoseReview />}></Route>
+      <Route path="/host/income" element={<Income />}></Route>
       <Route path="*" element={<Errorpage />}></Route>
     </Routes>
     </>

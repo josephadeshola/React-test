@@ -36,9 +36,9 @@ const HostvanView = () => {
               </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+              <Link className="hover:underline " to={"/host/income"}>
                 Income
-              </a>
+              </Link>
             </li>
             <li>
               <a className="hover:underline " href="">
