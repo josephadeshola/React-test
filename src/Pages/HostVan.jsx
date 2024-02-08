@@ -9,15 +9,16 @@ const HostVan = () => {
   const vans = CustormHook();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [index, setIndex] = useState(0);
   const [image, setImage] = useState([]);
-  const viewVana = (imageUrl, name, price) => {
+  const viewVana = (imageUrl, name, price,index) => {
     let vanView = {
       name: name,
       price: price,
       image: imageUrl,
+      index:index
     };
-    console.log(vanView);
-    navigate('/host/vans/123',{state:{vanData : vanView}})
+    navigate(`/host/vans/${index + 1}`,{state:{vanData : vanView}})
   };
   return (
     <div>
@@ -48,11 +49,11 @@ const HostVan = () => {
           </ul>
         </div>
         <p className="font-bold mt-4 mb-3">Your Listed Vans</p>
-        {vans.map((eachVan) => (
+        {vans.map((eachVan,index) => (
           <div
             className="bg-white mt-3 px-2 flex justify-between py-3 cursor-pointer "
             onClick={() =>
-              viewVana(eachVan.imageUrl, eachVan.name,eachVan.price )
+              viewVana(eachVan.imageUrl, eachVan.name,eachVan.price, index)
             }
             key={eachVan._id}
           >
