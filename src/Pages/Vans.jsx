@@ -45,7 +45,7 @@ const Vans = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mb-5 mt-20 px-4 py-2 bg-orange-50 ">
+      <div className="container mb-5 mt-20 h-auto px-4 py-2 bg-orange-50 ">
         <h1 className="mt-4 md:text-4xl  fw-bold">Explore our van options</h1>
         <div className="d-flex gap-md-5 gap-2 mt-4">
           <button className="btn bg-orange-200">Simple</button>

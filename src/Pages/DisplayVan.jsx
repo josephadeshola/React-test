@@ -13,7 +13,7 @@ const DisplayVan = () => {
   return (
     <div>
         <Navbar/>
-      <div className="container mb-5   bg-orange-50 mt-5 py-4 mb-3">
+      <div className="container mb-5   bg-orange-50 mt-5 py-4 h-auto">
         <div className="col-md-9 col-11 mt-3 mx-auto">
             <p className="text-decoration-underline pb-2"><i class="bi bi-arrow-left"></i><Link to={"/vans"}>Back to all vans</Link></p>
           <img className="h-auto w-full" src={location.state.viewImg} alt="" />

@@ -24,7 +24,7 @@ const HostVan = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mb-5  mt-5 bg-orange-50 py-5">
+      <div className="container mb-5 mt-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
             <li>

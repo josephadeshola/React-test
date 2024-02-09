@@ -15,7 +15,7 @@ const HoseReview = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-5 mb-5  py-5 bg-orange-50 px-4">
+      <div className="mt-5 mb-5  py-5 h-auto bg-orange-50 px-4">
         <div>
           <ul className="flex gap-3">
             <li>

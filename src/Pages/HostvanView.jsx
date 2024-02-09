@@ -27,7 +27,7 @@ const HostvanView = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mt-5 mb-5  bg-orange-50 py-5">
+      <div className="container mt-5 mb-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
             <li>
@@ -59,7 +59,7 @@ const HostvanView = () => {
 
         {Vans ? (
           <>
-            <div className="container bg-white p-3 mt-4 mb-2">
+            <div className="container bg-white  p-3 mt-4 mb-2">
               <div className="row">
                 <div className="flex gap-3 mt-4">
                   <img className="w-36 rounded h-36" src={Vans.imageUrl} alt="" />

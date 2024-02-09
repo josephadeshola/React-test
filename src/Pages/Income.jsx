@@ -10,7 +10,7 @@ const Income = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mt-5 mb-5  bg-orange-50 py-5">
+      <div className="container mt-5 mb-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex  mt-3 gap-3">
             <li>
