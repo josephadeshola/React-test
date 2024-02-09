@@ -13,15 +13,34 @@ import HostVan from "./Pages/HostVan";
 import HostvanView from "./Pages/HostvanView";
 import HoseReview from "./Pages/HoseReview";
 import Income from "./Pages/Income";
+import Signup from "./Pages/Signup";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        limit={2}
+        theme="light"
+      />
+
     <Routes>
       <Route path="/" element={<Allcomponent/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/vans" element={<Vans/>}></Route>
       <Route path="/view/van" element={<DisplayVan/>}></Route>
+      <Route path="/create" element={<Signup/>}></Route>
       <Route path="/login" element={<Signin/>}></Route>
       <Route path="/host" element={<Host />}></Route>
       <Route path="/host/vans" element={<HostVan />}></Route>

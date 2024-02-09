@@ -12,7 +12,7 @@ const HostvanView = () => {
   const [Vans, setVans] = useState([]);
   useEffect(() => {
     axios
-      .get(baseUrl + `/host/vans/${id}`)
+      .get(baseUrl + `api/host/vans/${id}`)
       .then((res) => {
         console.log(res.data, "find data");
         setVans(res.data);

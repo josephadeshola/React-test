@@ -6,7 +6,7 @@ const CustormHook = () => {
   const [vans, setVans] = useState([]);
   useEffect(() => {
     axios
-      .get(baseUrl + "/host/vans")
+      .get(baseUrl + "api/host/vans")
       .then((res) => {
         setVans(res.data);
       })

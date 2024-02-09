@@ -11,7 +11,7 @@ const Vans = () => {
   const [vans, setVans] = useState([]);
   useEffect(() => {
     axios
-      .get(baseUrl + "/vans")
+      .get(baseUrl + "api/vans")
       .then((res) => {
         console.log(res.data, "find data");
         setVans(res.data);
