@@ -27,11 +27,11 @@ const HostvanView = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mt-5 bg-orange-50 py-5">
+      <div className="container mt-5 mb-5  bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
             <li>
-              <Link className="hover:underline " to={"/host/vans"}>
+              <Link className="hover:underline " to={"/host"}>
                 Dashboard
               </Link>
             </li>
@@ -41,12 +41,12 @@ const HostvanView = () => {
               </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline" to={"/host/vans"}>
                 Vans
-              </a>
+              </Link>
             </li>
             <li>
-              <Link className="hover:underline " to={"/host/reviews"}>
+            <Link className="hover:underline " to={"/host/reviews"}>
                 Reviews
               </Link>
             </li>

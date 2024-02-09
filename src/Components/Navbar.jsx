@@ -16,7 +16,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="ml-10 flex items-baseline space-x-">
                 {isSignin && (
                   <Link
                     to="/host"

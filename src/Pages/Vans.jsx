@@ -45,7 +45,7 @@ const Vans = () => {
   return (
     <div>
       <Navbar />
-      <div className="container  mt-20 px-4 py-2 bg-orange-50 ">
+      <div className="container mb-5 mt-20 px-4 py-2 bg-orange-50 ">
         <h1 className="mt-4 md:text-4xl  fw-bold">Explore our van options</h1>
         <div className="d-flex gap-md-5 gap-2 mt-4">
           <button className="btn bg-orange-200">Simple</button>
@@ -58,13 +58,13 @@ const Vans = () => {
         <div>
           <div className="md:grid md:grid-cols-4 grid gap-3 grid-cols-2 mb-5 mx-auto">
             {vans.map((van, index) => (
-              <div key={van.id} className="  mt-12 mx-auto ">
+              <div key={van.id} className=" col-md-9  mt-12 mx-auto ">
                 <img
-                  className="rounded-md md:w-1/1 w-full md:h-52 h-52"
+                  className="rounded-md col-12 h-48"
                   src={van.imageUrl}
                   alt={van.name}
                 />
-                <div className="d-flex justify-between gap-10 mt-2">
+                <div className="d-flex justify-between g mt-2">
                   <p className="text-md fw-bold ">{van.name}</p>
                   <span className="text-xl ">
                     <b>${van.price}</b> <br />

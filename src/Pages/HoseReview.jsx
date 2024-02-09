@@ -15,13 +15,13 @@ const HoseReview = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-5 py-5 bg-orange-50 px-4">
+      <div className="mt-5 mb-5  py-5 bg-orange-50 px-4">
         <div>
           <ul className="flex gap-3">
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host"}>
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
             <Link className="hover:underline " to={"/host/income"}>
@@ -34,9 +34,9 @@ const HoseReview = () => {
               </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host/reviews"}>
                 Reviews
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -9,18 +9,18 @@ const vans=CustormHook();
   return (
     <div>
       <Navbar />
-      <div className="container mt-5 bg-orange-50 py-5">
+      <div className="container mb-5  mt-5 bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3">
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host"}>
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host/income"}>
                 Income
-              </a>
+              </Link>
             </li>
             <li>
               <Link className="hover:underline"  to={"/host/vans"}>
@@ -28,9 +28,9 @@ const vans=CustormHook();
               </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host/reviews"}>
                 Reviews
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="px-2 py-4 mt-4 bg-orange-100">

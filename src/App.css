@@ -1,6 +1,11 @@
 .homeImg {
   height: 92vh;
 }
+.get-fixed{
+  position: fixed;
+  bottom: 0px;
+  
+}
 @media screen and (max-width: 600px) {
   .homeImg {
     height: 100vh;

@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import CustormHook from "./CustormHook";
 import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const HostVan = () => {
     const navigate=useNavigate();
@@ -23,28 +24,28 @@ const HostVan = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mt-5 bg-orange-50 py-5">
+      <div className="container mb-5  mt-5 bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host"}>
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host/income"}>
                 Income
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline" to={"/host/vans"}>
                 Vans
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline " href="">
+            <Link className="hover:underline " to={"/host/reviews"}>
                 Reviews
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

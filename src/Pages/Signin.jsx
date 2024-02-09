@@ -7,7 +7,7 @@ const Signin = () => {
     <div>
       <Navbar/>
       <div className="container bg-orange-50 mt-5 py-5">
-        <div>
+        <div className='mb-5 '>
             <div class="relative mb-4">
                 <h5 className='text-center fw-bold mt-5 mb-5 text-2xl'>Sign in to your account</h5>
                 <input placeholder='Email address' type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
