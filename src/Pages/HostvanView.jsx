@@ -120,13 +120,12 @@ const HostvanView = () => {
                     <span className="font-semibold ">Description</span>: <span>{Vans.description}</span>
                       <br />
                       <br />
-                      
                       <b>Visibility</b>: <span>Public</span>
                     </div>
                   )}
                   {activeTab === "pricing" && (
                     <div>
-                      <b>Pricing</b>:{" "}
+                      <b>Pricing</b>:
                       <span className="fw-bold">${Vans.price}.00 </span>
                       <span>/day</span>
                     </div>

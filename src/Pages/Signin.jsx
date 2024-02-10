@@ -48,7 +48,7 @@ const togglePasswordVisibility=()=>{
   return (
     <div>
       <Navbar />
-      <div className="container bg-orange-50 h-auto mt-5 py-5">
+      <div className="container bg-orange-50 h-auto mt-3 py-5">
         <div className="mb-5 ">
           <form action="" onSubmit={formik.handleSubmit}>
             <div class="relative mb-4 md:w-1/2 w-full mx-auto">
@@ -63,6 +63,11 @@ const togglePasswordVisibility=()=>{
                 class="w-full bg-white rounded border border-gray-300 focus:ring-orange-300 focus:ring-2 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 onChange={formik.handleChange}
               />
+              {formik.errors.email && formik.touched.email && (
+                <small className="text-danger text-center mx-auto mt-2 p-4">
+                  {formik.errors.email}
+                </small>
+              )}
               <input
                 placeholder="Password"
                 type={showPass ? 'text' : 'password'}
@@ -76,6 +81,11 @@ const togglePasswordVisibility=()=>{
                   <i  onClick={togglePasswordVisibility} class="bi absolute py-6 mr-1 bi-eye-fill bi text-2xl text-orange-500 top-40 transform -translate-y-1/2 right-2 cursor-pointer"></i>
                 )
               }
+              {formik.errors.password && formik.touched.password && (
+                <small className="text-danger text-center mx-auto mt-2 p-4">
+                  {formik.errors.password}
+                </small>
+              )}
               <button
                 className="btn hover:bg-orange-500 bg-orange-500 text-white w-full md:mt-4 mt-5"
                 type="submit"
