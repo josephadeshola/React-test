@@ -1,10 +1,11 @@
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CustormHook from "./CustormHook";
 
 
 const Host = () => {
+  const getuser=JSON.parse(localStorage.getItem("user"))
 const vans=CustormHook();  
   return (
     <div>
@@ -34,7 +35,7 @@ const vans=CustormHook();
             </li>
           </ul>
           <div className="px-2 py-4 mt-4 bg-orange-100">
-            <p className="text-1xl fw-bold">Welcome!</p>
+            <p className="text-1xl fw-bold">Welcome! {getuser}</p>
             <div className="flex py-2 justify-between">
               <small>
                 Income last <span className="underline">30 days</span>{" "}

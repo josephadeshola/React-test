@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 
 const HoseReview = () => {
   const ratings = [
-    { stars: 5, percentage: 100, color: " bg-orange-500" },
+    { stars: 5, percentage: 100, color:" bg-orange-500" },
     { stars: 4, percentage: 0, color: "bg-zinc-200" },
     { stars: 3, percentage: 0, color: "bg-zinc-200" },
     { stars: 2, percentage: 0, color: "bg-zinc-200" },
@@ -15,7 +15,7 @@ const HoseReview = () => {
   return (
     <div>
       <Navbar />
-      <div className="mt-5 mb-5  py-5 h-auto bg-orange-50 px-4">
+      <div className="mt-5 mb-5  py-5 h-auto bg-orange-50 px-3">
         <div>
           <ul className="flex gap-3">
             <li>
@@ -54,7 +54,7 @@ const HoseReview = () => {
           <div className="flex mx-auto text-center justify-between my-2">
             <small>{rate.stars} stars</small>
             <div
-              class="progress h-2  mt-2"
+              class="progress h-2 col-md-11 mx-auto mt-2"
               role="progressbar"
               aria-label="Warning example"
               aria-valuenow="75"
