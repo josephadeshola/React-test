@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import baseUrl from "../BaseUrl";
 import Footer from "../Components/Footer";
+import SecondNav from "../Components/SecondNav";
 
 const HostvanView = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const HostvanView = () => {
   };
   return (
     <div>
-      <Navbar />
+      <SecondNav/>
       <div className="container mt-5 mb-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">

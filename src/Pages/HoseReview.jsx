@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import SecondNav from "../Components/SecondNav";
 
 const HoseReview = () => {
   const ratings = [
@@ -14,7 +15,7 @@ const HoseReview = () => {
 
   return (
     <div>
-      <Navbar />
+      <SecondNav/>
       <div className="mt-5 mb-5  py-5 h-auto bg-orange-50 px-3">
         <div>
           <ul className="flex gap-3">
@@ -51,7 +52,7 @@ const HoseReview = () => {
         </div>
 
         {ratings.map((rate, index) => (
-          <div className="flex mx-auto text-center justify-between my-2">
+          <div key={rate.id} className="flex mx-auto text-center justify-between my-2">
             <small>{rate.stars} stars</small>
             <div
               class="progress h-2 col-md-11 mx-auto mt-2"

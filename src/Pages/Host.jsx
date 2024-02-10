@@ -2,6 +2,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link, useParams } from "react-router-dom";
 import CustormHook from "./CustormHook";
+import SecondNav from "../Components/SecondNav";
 
 
 const Host = () => {
@@ -9,7 +10,7 @@ const Host = () => {
 const vans=CustormHook();  
   return (
     <div>
-      <Navbar />
+      <SecondNav/>
       <div className="container mb-5  mt-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3">

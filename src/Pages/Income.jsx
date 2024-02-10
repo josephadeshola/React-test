@@ -5,11 +5,12 @@ import incomChart from '/data/incomChart.json'
 import { Bar } from "react-chartjs-2";
 import image from '../assets/image 532.png'
 import Footer from "../Components/Footer";
+import SecondNav from "../Components/SecondNav";
 const Income = () => {
     
   return (
     <div>
-      <Navbar />
+      <SecondNav/>
       <div className="container mt-5 mb-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex  mt-3 gap-3">

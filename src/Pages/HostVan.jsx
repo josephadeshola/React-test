@@ -4,6 +4,7 @@ import CustormHook from "./CustormHook";
 import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import SecondNav from "../Components/SecondNav";
 
 const HostVan = () => {
     const navigate=useNavigate();
@@ -23,7 +24,7 @@ const HostVan = () => {
   };
   return (
     <div>
-      <Navbar />
+     <SecondNav/>
       <div className="container mb-5 mt-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
