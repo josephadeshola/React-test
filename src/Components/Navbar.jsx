@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
-  const isSignin = location.pathname === "/login" || "/create";
+  const isSignin = location.pathname === "/login";
    return (
     <div>
       <nav className="bg-white fixed-top  w-full py-2">

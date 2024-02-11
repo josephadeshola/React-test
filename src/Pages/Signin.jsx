@@ -77,9 +77,9 @@ const togglePasswordVisibility=()=>{
                 onChange={formik.handleChange}
               />
                 {showPass ? (
-                    <i  onClick={togglePasswordVisibility} class="bi absolute py-6 mr-1 bi-eye-slash-fill bi text-2xl top-32 transform -translate-y-1/2 right-2 mt-1 cursor-pointer"></i>
+                    <i  onClick={togglePasswordVisibility} class="bi absolute py-6 mr-1 bi-eye-slash-fill bi text-2xl top-40 transform -translate-y-1/2 right-2 text-orange-500 cursor-pointer"></i>
                 ):(
-                  <i  onClick={togglePasswordVisibility} class="bi absolute py-6 mr-1 bi-eye-fill bi text-2xl top-32 transform -translate-y-1/2 right-2 mt-1 cursor-pointer"></i>
+                  <i  onClick={togglePasswordVisibility} class="bi absolute py-6 mr-1 bi-eye-fill bi text-2xl top-40 transform -translate-y-1/2 right-2 text-orange-500  cursor-pointer"></i>
                 )
               }
               {formik.errors.password && formik.touched.password && (
