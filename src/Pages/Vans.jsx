@@ -16,7 +16,7 @@ const Vans = () => {
       .then((res) => {
         console.log(res.data, "find data");
         setVans(res.data);
-        setIsloading(false);
+        setIsloading(true);
       })
       .catch((err) => {
         console.log(err, "error ");
@@ -52,7 +52,7 @@ const Vans = () => {
 
       {isloading ? (
         <div className="w-full text-center pt-36">
-          <SpinnerRoundFilled speed={50} color="rgba(172, 85, 57, 1)"  className="mx-auto h-50 w-50 " />
+          <SpinnerRoundFilled speed={50} color="rgba(172, 85, 57, 1)"  className="mx-auto mt-5 md:mt-0 h-50 w-50 " />
         </div>
       ) : (
         
