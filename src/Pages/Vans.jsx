@@ -16,7 +16,7 @@ const Vans = () => {
       .then((res) => {
         console.log(res.data, "find data");
         setVans(res.data);
-        setIsloading(true);
+        setIsloading(false);
       })
       .catch((err) => {
         console.log(err, "error ");
