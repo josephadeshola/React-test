@@ -52,8 +52,8 @@ const HoseReview = () => {
         </div>
 
         {ratings.map((rate, index) => (
-          <div key={rate.id} className="flex mx-auto text-center justify-between my-2">
-            <small>{rate.stars} stars</small>
+          <div key={rate.id} className="flex w-100 justify-between my-2">
+            <small className="text-md">{rate.stars} stars</small>
             <div
               class="progress h-2 col-md-11 mx-auto mt-2"
               role="progressbar"

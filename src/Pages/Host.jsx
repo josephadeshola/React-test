@@ -4,35 +4,61 @@ import { Link, useParams } from "react-router-dom";
 import CustormHook from "./CustormHook";
 import SecondNav from "../Components/SecondNav";
 
-
 const Host = () => {
-  const getuser=JSON.parse(localStorage.getItem("user"))
-const vans=CustormHook();  
+  const getuser = JSON.parse(localStorage.getItem("user"));
+  const vans = CustormHook();
+  const logOutUser=()=>{
+    alert("user")
+  }
   return (
     <div>
-      <SecondNav/>
+      <SecondNav />
       <div className="container mb-5  mt-5 h-auto bg-orange-50 py-5">
         <div>
-          <ul className="flex gap-3">
+          <ul className="flex gap-3 text-sm">
             <li>
-            <Link className="hover:underline " to={"/host"}>
+              <Link className="hover:underline " to={"/host"}>
                 Dashboard
               </Link>
             </li>
             <li>
-            <Link className="hover:underline " to={"/host/income"}>
+              <Link className="hover:underline " to={"/host/income"}>
                 Income
               </Link>
             </li>
             <li>
-              <Link className="hover:underline"  to={"/host/vans"}>
+              <Link className="hover:underline" to={"/host/vans"}>
                 Vans
               </Link>
             </li>
             <li>
-            <Link className="hover:underline " to={"/host/reviews"}>
+              <Link className="hover:underline " to={"/host/reviews"}>
                 Reviews
               </Link>
+            </li>
+            <li>
+              <div className="dropdown">
+                <Link
+                  className="hover:underline dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false" 
+                >
+                  Settings
+                </Link>
+                <ul class="dropdown-menu">
+                  <li className="py-2">
+                    <a class="dropdown-item" href="#">
+                    <i class="bi bi-person-circle"></i> Profile
+                    </a>
+                  </li>
+                  <hr />
+                  <li className="py-2" onClick={logOutUser}>
+                    <a class="dropdown-item" href="#">
+                    <i class="bi bi-box-arrow-left"></i> Log out
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
           <div className="px-2 py-4 mt-4 bg-orange-100">
@@ -55,7 +81,7 @@ const vans=CustormHook();
           {vans.map((eachVan) => (
             <div className="bg-white mt-3 px-2 flex justify-between py-3 ">
               <div>
-                <div  key={eachVan.id} className="flex gap-2">
+                <div key={eachVan.id} className="flex gap-2">
                   <img
                     className="w-16 h-16 rounded"
                     src={eachVan.imageUrl}

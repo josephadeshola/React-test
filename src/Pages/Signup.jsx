@@ -57,7 +57,6 @@ const Signup = () => {
         });
     },
   });
-
   return (
     <div>
       <Navbar />
