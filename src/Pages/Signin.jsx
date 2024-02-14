@@ -32,8 +32,8 @@ const togglePasswordVisibility=()=>{
         .then((res) => {
           if (res.data.status == true) {
             toast.success(res.data.message);
-            const userFirstName = res.data.firstname;
-            localStorage.setItem("user", JSON.stringify(userFirstName));
+            const alluser=(res.data.user)
+            localStorage.setItem("alluser", JSON.stringify(alluser));
             navigate("/host");
           } else {
             toast.error(res.data.message);

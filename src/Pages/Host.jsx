@@ -10,7 +10,7 @@ import { useState } from "react";
 
 
 const Host = () => {
-  const getuser = JSON.parse(localStorage.getItem("user"));
+ const  getuser= JSON.parse(localStorage.getItem("alluser"))
   const vans = CustormHook();
   const navigate=useNavigate()
   const [isLoading, setIsLoading] = useState(true)
@@ -84,7 +84,7 @@ const Host = () => {
           </ul>
      
           <div className="px-2 py-4 mt-4 bg-orange-100">
-            <p className="text-1xl fw-bold">Welcome! {getuser}</p>
+            <p className="text-1xl fw-bold">Welcome! {getuser.firstname} </p>
             <div className="flex py-2 justify-between">
               <small>
                 Income last <span className="underline">30 days</span>{" "}
