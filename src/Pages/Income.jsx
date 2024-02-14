@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
-import incomChart from '/data/incomChart.json'
 import { Bar } from "react-chartjs-2";
 import image from '../assets/image 532.png'
 import Footer from "../Components/Footer";

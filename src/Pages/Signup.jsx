@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import baseUrl from "../BaseUrl";
 import axios from "axios";
 import { toast } from "react-toastify";
+import SecondNav from "../Components/SecondNav";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const Signup = () => {
   });
   return (
     <div>
-      <Navbar />
+     <SecondNav/>
       <div className="container bg-orange-50 h-auto mt-3 py-5">
         <div className="mb-5 ">
           <form action="" onSubmit={formik.handleSubmit}>

@@ -1,15 +1,36 @@
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import CustormHook from "./CustormHook";
 import SecondNav from "../Components/SecondNav";
+import axios from "axios";
+import baseUrl from "../BaseUrl";
+import { toast } from "react-toastify";
+import { useState } from "react";
+
 
 const Host = () => {
   const getuser = JSON.parse(localStorage.getItem("user"));
   const vans = CustormHook();
-  const logOutUser=()=>{
-    alert("user")
-  }
+  const navigate=useNavigate()
+  const [isLoading, setIsLoading] = useState(true)
+  const logOutUser = () => {
+    axios
+      .get(baseUrl + "user/logout")
+      .then((res) => {
+        if (res.data.status == true) {
+          console.log(res, "user response");
+          toast.success(res.data.message);
+          localStorage.removeItem("user");
+         navigate("/")
+        } else {
+          toast.error(res.data.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <SecondNav />
@@ -41,26 +62,27 @@ const Host = () => {
                 <Link
                   className="hover:underline dropdown-toggle"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false" 
+                  aria-expanded="false"
                 >
                   Settings
                 </Link>
                 <ul class="dropdown-menu">
-                  <li className="py-2">
-                    <a class="dropdown-item" href="#">
-                    <i class="bi bi-person-circle"></i> Profile
-                    </a>
+                  <li  style={{cursor:"pointer"}} className="py-2">
+                    <Link class="dropdown-item" to={"/profile"}>
+                      <i class="bi bi-person-circle"></i> Profile
+                    </Link>
                   </li>
                   <hr />
-                  <li className="py-2" onClick={logOutUser}>
-                    <a class="dropdown-item" href="#">
-                    <i class="bi bi-box-arrow-left"></i> Log out
+                  <li  style={{cursor:"pointer"}} className="py-2">
+                    <a class="dropdown-item" onClick={logOutUser}>
+                      <i class="bi bi-box-arrow-left"></i> Log out
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
           </ul>
+     
           <div className="px-2 py-4 mt-4 bg-orange-100">
             <p className="text-1xl fw-bold">Welcome! {getuser}</p>
             <div className="flex py-2 justify-between">

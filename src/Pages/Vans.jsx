@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import baseUrl from "../BaseUrl";
 import { useNavigate } from "react-router-dom";
-import { SpinnerCircular, SpinnerRoundFilled } from "spinners-react";
+import {  SpinnerRoundFilled } from "spinners-react";
 
 const Vans = () => {
   const navigate = useNavigate();
@@ -20,7 +20,6 @@ const Vans = () => {
       })
       .catch((err) => {
         console.log(err, "error ");
-        // setIsloading(false);
       });
   }, []);
   const buttonColors = [
@@ -32,10 +31,10 @@ const Vans = () => {
     "bg-green-800",
     "bg-green-900",
   ];
-  const [viewImg, setViewImg] = useState(null);
-  const [price, setprice] = useState("");
-  const [name, setname] = useState("");
-  const [btnVan, setBtnVan] = useState("");
+  // const [viewImg, setViewImg] = useState(null);
+  // const [price, setprice] = useState("");
+  // const [name, setname] = useState("");
+  // const [btnVan, setBtnVan] = useState("");
   const handleViews = (imageUrl, price, name, type, color) => {
     let getData = {
       price: price,

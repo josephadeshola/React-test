@@ -3,7 +3,7 @@ import Allcomponent from "./Components/Allcomponent";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import About from "./Pages/About";
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Vans from "./Pages/Vans";
 import DisplayVan from "./Pages/DisplayVan";
 import Signin from "./Pages/Signin";
@@ -16,8 +16,8 @@ import Income from "./Pages/Income";
 import Signup from "./Pages/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
+import Profile from "./Pages/Profile";
+// import ProtectedRoute from './Pages/ProtectedRoute'
 function App() {
   return (
     <>
@@ -35,20 +35,21 @@ function App() {
         theme="light"
       />
 
-    <Routes>
-      <Route path="/" element={<Allcomponent/>}></Route>
-      <Route path="/about" element={<About/>}></Route>
-      <Route path="/vans" element={<Vans/>}></Route>
-      <Route path="/view/van" element={<DisplayVan/>}></Route>
-      <Route path="/create" element={<Signup/>}></Route>
-      <Route path="/login" element={<Signin/>}></Route>
-      <Route path="/host" element={<Host />}></Route>
-      <Route path="/host/vans" element={<HostVan />}></Route>
-      <Route path="/host/vans/:id" element={<HostvanView />}></Route>
-      <Route path="/host/reviews" element={<HoseReview />}></Route>
-      <Route path="/host/income" element={<Income />}></Route>
-      <Route path="*" element={<Errorpage />}></Route>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Allcomponent />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/vans" element={<Vans />}></Route>
+          <Route path="/view/van" element={<DisplayVan />}></Route>
+          <Route path="/create" element={<Signup />}></Route>
+          <Route path="/login" element={<Signin />}></Route>
+          <Route path="/host" element={<Host />}></Route>
+          <Route path="/host/vans" element={<HostVan />}></Route>
+          <Route path="/host/vans/:id" element={<HostvanView />}></Route>
+          <Route path="/host/reviews" element={<HoseReview />}></Route>
+          <Route path="/host/income" element={<Income />}></Route>
+          <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="*" element={<Errorpage />}></Route>
+      </Routes>
     </>
   );
 }

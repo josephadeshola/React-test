@@ -13,7 +13,8 @@ const CustormHook = () => {
       .catch((err) => {
         console.log(err, "error ");
       });
-  }, []);
+
+  },[]);
   return vans;
 };
 
