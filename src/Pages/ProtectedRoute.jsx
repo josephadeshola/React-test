@@ -49,7 +49,7 @@ const  useProtectedRoute = () => {
           setIsLoading(false);
         });
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
   const logout = () => {

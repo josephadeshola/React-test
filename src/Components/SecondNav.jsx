@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import useProtectedRoute from "../Pages/ProtectedRoute";
 
 const SecondNav = () => {
@@ -42,6 +42,7 @@ const SecondNav = () => {
           </div>
         </div>
       </nav>
+      <Outlet/>
     </div>
   );
 };
