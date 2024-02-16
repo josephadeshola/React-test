@@ -32,7 +32,9 @@ const togglePasswordVisibility=()=>{
         .then((res) => {
           if (res.data.status == true) {
             toast.success(res.data.message);
-            const alluser=(res.data.user)
+            const alluser= res.data.user;
+            const mytoken = res.data.token;
+            localStorage.token = mytoken;
             localStorage.setItem("alluser", JSON.stringify(alluser));
             navigate("/host");
           } else {

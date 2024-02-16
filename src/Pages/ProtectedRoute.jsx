@@ -1,33 +1,64 @@
-import React, { createContext, useState } from "react";
-import baseUrl from "../BaseUrl";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+//  import { useDispatch } from 'react-redux';
+//  import { addUser } from '../../src/redux/counterSlice';
+//  import { useSnackbar } from 'notistack';
+import baseUrl from "../BaseUrl";
+import { toast } from "react-toastify";
 
-// const ProtectedRoute = () => {
-//   const AuthContext = createContext({children});
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
+const  useProtectedRoute = () => {
+//   const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+//   const dispatch = useDispatch();
+  const token = localStorage.token;
+  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-//   return (
-//     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
+  const warningMsg = (variant) => () => {
+    toast("token expire!", { variant });
+  };
 
-// export default ProtectedRoute;
+  useEffect(() => {
+    if (token) {
+      axios
+        .get( baseUrl + 'user/auth', {
+          headers: {
+            Authorization: `BearerVanLife${token}`,
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+          },
+        })
+        .then((res) => {
+          // console.log(res,"data");
+          if (res.status == 200) {
+            setUser(res.data.result);
+          } else {
+            localStorage.removeItem("token");
+            navigate("/login");
+          }
+        })
+        .catch((err) => {
+          console.log(err , "error");
+          if (err) {
+            warningMsg("warning")();
+            navigate("/login");
+          }
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else {
+      navigate("/login");
+    }
+  }, []);
+  const logout = () => {
+    localStorage.removeItem("token");
+    setUser(null);
+    navigate("/login");
+  };
 
-// export const ProtectedRoute = async ()=> {
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
-//   try {
-//     await axios.get(`${baseUrl}/auth`)
-//     .then((res)=>{
-//       setIsAuthenticated(res.data)
-//     }).catch ((err)=>{
+  return { user, isLoading ,logout};
+};
 
-//     })
-
-//   } catch {
-
-//   }
-//   return isAuthenticated;
-    
-// }
+export default  useProtectedRoute;

@@ -6,14 +6,26 @@ import SecondNav from "../Components/SecondNav";
 import axios from "axios";
 import baseUrl from "../BaseUrl";
 import { toast } from "react-toastify";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 
 const Host = () => {
- const  getuser= JSON.parse(localStorage.getItem("alluser"))
+  const getuser = JSON.parse(localStorage.getItem("alluser"));
+  // let updatedFirstname=JSON.parse(localStorage.getItem("updateUser"))
+  // console.log(updatedFirstname);
+  const [firstname, setFirstname] = useState("")
+  useEffect(()=>{
+    // if(getuser){
+      setFirstname(getuser.firstname)
+    // }
+    // else{
+    //   setFirstname(updatedFirstname.firstname)
+ 
+    // }
+  },[])
+  console.log(firstname);
   const vans = CustormHook();
-  const navigate=useNavigate()
-  const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const logOutUser = () => {
     axios
       .get(baseUrl + "user/logout")
@@ -21,8 +33,8 @@ const Host = () => {
         if (res.data.status == true) {
           console.log(res, "user response");
           toast.success(res.data.message);
-          localStorage.removeItem("user");
-         navigate("/")
+          localStorage.removeItem("alluser");
+          navigate("/");
         } else {
           toast.error(res.data.message);
         }
@@ -31,6 +43,10 @@ const Host = () => {
         console.log(err);
       });
   };
+
+  if(!getuser){
+    return navigate("/create")
+  }
   return (
     <div>
       <SecondNav />
@@ -67,13 +83,13 @@ const Host = () => {
                   Settings
                 </Link>
                 <ul class="dropdown-menu">
-                  <li  style={{cursor:"pointer"}} className="py-2">
+                  <li style={{ cursor: "pointer" }} className="py-2">
                     <Link class="dropdown-item" to={"/profile"}>
                       <i class="bi bi-person-circle"></i> Profile
                     </Link>
                   </li>
                   <hr />
-                  <li  style={{cursor:"pointer"}} className="py-2">
+                  <li style={{ cursor: "pointer" }} className="py-2">
                     <a class="dropdown-item" onClick={logOutUser}>
                       <i class="bi bi-box-arrow-left"></i> Log out
                     </a>
@@ -82,12 +98,12 @@ const Host = () => {
               </div>
             </li>
           </ul>
-     
+
           <div className="px-2 py-4 mt-4 bg-orange-100">
-            <p className="text-1xl fw-bold">Welcome! {getuser.firstname} </p>
+            <p className="text-1xl fw-bold">Welcome! {firstname} </p>
             <div className="flex py-2 justify-between">
               <small>
-                Income last <span className="underline">30 days</span>{" "}
+                Income last <span className="underline">30 days</span>
               </small>
               <small>Details</small>
             </div>
