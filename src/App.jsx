@@ -21,11 +21,11 @@ import { Navbar } from "flowbite-react";
 function App() {
   const { user, isLoading,logout } = useProtectedRoute()
 
-  if(isLoading){
-    return  <div className="w-full text-center pt-36">
-    <SpinnerRoundFilled speed={50} color="rgba(172, 85, 57, 1)"  className="mx-auto mt-5 md:mt-0 h-50 w-50 " />
-  </div>
-  }
+  // if(isLoading){
+  //   return  <div className="w-full text-center pt-36">
+  //   <SpinnerRoundFilled speed={50} color="rgba(172, 85, 57, 1)"  className="mx-auto mt-5 md:mt-0 h-50 w-50 " />
+  // </div>
+  // }
 
   return (
     <>
