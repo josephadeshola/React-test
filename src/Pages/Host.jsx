@@ -12,17 +12,16 @@ const Host = () => {
   const getuser = JSON.parse(localStorage.getItem("alluser"));
   // let updatedFirstname=JSON.parse(localStorage.getItem("updateUser"))
   // console.log(updatedFirstname);
-  const [firstname, setFirstname] = useState("")
-  useEffect(()=>{
-    // if(getuser){
-      setFirstname(getuser.firstname)
-    // }
-    // else{
-    //   setFirstname(updatedFirstname.firstname)
+  // const [firstname, setFirstname] = useState("")
+  // useEffect(()=>{
+  //   // if(getuser){
+  //     setFirstname(getuser.firstname)
+  //   // }
+  //   // else{
+  //   //   setFirstname(updatedFirstname.firstname)
  
-    // }
-  },[])
-  console.log(firstname);
+  //   // }
+  // },[])
   const vans = CustormHook();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
@@ -100,7 +99,7 @@ const Host = () => {
           </ul>
 
           <div className="px-2 py-4 mt-4 bg-orange-100">
-            <p className="text-1xl fw-bold">Welcome! {firstname} </p>
+            <p className="text-1xl fw-bold">Welcome! {getuser.firstname} </p>
             <div className="flex py-2 justify-between">
               <small>
                 Income last <span className="underline">30 days</span>
