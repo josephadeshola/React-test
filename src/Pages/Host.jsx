@@ -1,6 +1,6 @@
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import CustormHook from "./CustormHook";
 import SecondNav from "../Components/SecondNav";
 import axios from "axios";
@@ -10,41 +10,16 @@ import { useEffect, useState } from "react";
 
 const Host = () => {
   const getuser = JSON.parse(localStorage.getItem("alluser"));
-  // let updatedFirstname=JSON.parse(localStorage.getItem("updateUser"))
-  // console.log(updatedFirstname);
-  // const [firstname, setFirstname] = useState("")
-  // useEffect(()=>{
-  //   // if(getuser){
-  //     setFirstname(getuser.firstname)
-  //   // }
-  //   // else{
-  //   //   setFirstname(updatedFirstname.firstname)
- 
-  //   // }
-  // },[])
   const vans = CustormHook();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const logOutUser = () => {
-    axios
-      .get(baseUrl + "user/logout")
-      .then((res) => {
-        if (res.data.status == true) {
-          console.log(res, "user response");
-          toast.success(res.data.message);
-          localStorage.removeItem("alluser");
-          navigate("/");
-        } else {
-          toast.error(res.data.message);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    localStorage.removeItem("token");
+    navigate("/");
   };
 
-  if(!getuser){
-    return navigate("/create")
+  if (!getuser) {
+    return navigate("/create");
   }
   return (
     <div>

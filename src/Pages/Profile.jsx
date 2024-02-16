@@ -5,22 +5,10 @@ import baseUrl from "../BaseUrl";
 
 const Profile = () => {
   const getuser = JSON.parse(localStorage.getItem("alluser"));
-  const [first, setFirst] = useState("");
-  const [last, setLast] = useState("");
-  const [email, setEmail] = useState("");
-  const userDisplay=()=>{
-    setFirst(getuser.firstname);
-    setLast(getuser.lastname);
-    setEmail(getuser.email);
-  }
-  useEffect(() => {
-    userDisplay();
-  }, []);
-
   const [data, setdata] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
+    firstname: getuser ? getuser.firstname : "",
+    lastname: getuser ? getuser.lastname : "",
+    email: getuser ? getuser.email : "",
     userId: getuser._id,
   });
   const handleChanges = (e) => {
@@ -35,10 +23,7 @@ const Profile = () => {
       .then((res) => {
         console.log(res);
         const userUpdated = res.data.user;
-        localStorage.updateUser = JSON.stringify(userUpdated);
-        setFirst(userUpdated.firstname)
-        setLast(userUpdated.lastname)
-        setEmail(userUpdated.email)
+        localStorage.alluser = JSON.stringify(userUpdated);
       })
       .catch((err) => {
         console.log(err);
@@ -73,7 +58,7 @@ const Profile = () => {
                 value={data.firstname}
                 name="firstname"
                 className="form-control border-orange-500 bg-black-500 mt-3"
-                placeholder={first}
+                placeholder={data.firstname}
                 onChange={handleChanges}
               />
               <input
@@ -81,7 +66,7 @@ const Profile = () => {
                 value={data.lastname}
                 name="lastname"
                 className="form-control border-orange-500 bg-black-500 mt-3"
-                placeholder={last}
+                placeholder={data.lastname}
                 onChange={handleChanges}
               />
               <input
@@ -89,7 +74,7 @@ const Profile = () => {
                 value={data.email}
                 name="email"
                 className="form-control border-orange-500 bg-black-500 mt-3"
-                placeholder={email}
+                placeholder={data.email}
                 onChange={handleChanges}
               />
             </div>
@@ -115,15 +100,15 @@ const Profile = () => {
       <div className="container  shadow-xl pb-5 py-8 mt-20">
         <p className="font-bold text-xl text-orange-500">Profile</p>
         <div>
-          <p className="mt-4 shadow py-2 px-2 rounded-md">{first}</p>
+          <p className="mt-4 shadow py-2 px-2 rounded-md">{data.firstname}</p>
         </div>
         <hr className="text-orange-500" />
         <div>
-          <p className="mt-4 shadow py-2 px-2 rounded-md">{last}</p>
+          <p className="mt-4 shadow py-2 px-2 rounded-md">{data.lastname}</p>
         </div>
         <hr className="text-orange-500" />
         <div>
-          <p className="mt-4 shadow py-2 px-2 rounded-md">{email}</p>
+          <p className="mt-4 shadow py-2 px-2 rounded-md">{data.email}</p>
         </div>
         <hr className="text-orange-500" />
         <i

@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useProtectedRoute from "../Pages/ProtectedRoute";
 
 const SecondNav = () => {
-  const { user, isLoging } = useProtectedRoute();
   return (
     <div>
       <nav className="bg-white fixed-top  w-full py-2">
@@ -16,15 +15,12 @@ const SecondNav = () => {
             </div>
             <div className="">
               <div className="ml-10 flex items-baseline ">
-                {user && (
                   <Link
                     to="/host"
                     className="text-gray-600 px-3 py-2 rounded-md text-sm font-semibold"
                   >
                     Host
-                  </Link>
-                )}
-
+                  </Link>                
                 <Link
                   to="/about"
                   className="text-gray-600 px-3 py-2 rounded-md text-sm font-semibold"
@@ -42,7 +38,7 @@ const SecondNav = () => {
           </div>
         </div>
       </nav>
-      <Outlet/>
+    
     </div>
   );
 };
