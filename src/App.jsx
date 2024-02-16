@@ -42,7 +42,7 @@ function App() {
         limit={2}
         theme="light"
       />
-      <Navbar user={user} logout={logout}/>
+      {/* <Navbar user={user} logout={logout}/> */}
       <Routes>
         <Route path="/" element={<Allcomponent />}></Route>
         <Route path="/about" element={<About />}></Route>
