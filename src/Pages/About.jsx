@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import image from '../assets/image 54.png'
+import { SpinnerRoundFilled } from "spinners-react";
+
 const About = () => {
+  const [isLoading, setisLoading] = useState(true)
+  useEffect(()=>{
+    const timer=setTimeout(()=>setisLoading(false),2000)
+    return()=>clearTimeout(timer)
+  },[])
   return (
     <div>
       <Navbar />
+      {isLoading ? (
+        <div className="w-full text-center pt-36">
+        <SpinnerRoundFilled
+          speed={50}
+          height={"100px"}
+          width={"100px"}
+          color="rgba(172, 85, 57, 1)"
+          className="mx-auto mt-5 md:mt-0"
+        />
+      </div>
+      ):(
       <div className="mb-10">
       <div className="w-full">
           <img
@@ -39,6 +57,8 @@ const About = () => {
         </div>
       </div>
       </div>
+
+      )}
       <Footer/>
     </div>
   );
