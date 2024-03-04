@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import CustormHook from "./CustormHook";
 import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SecondNav from "../Components/SecondNav";
+import { SpinnerRoundFilled } from "spinners-react";
 
 const HostVan = () => {
     const navigate=useNavigate();
+    const [isLoading, setisLoading] = useState(true)
+    useEffect(()=>{
+      const timer=setTimeout(()=>setisLoading(false),2000)
+      return()=>clearTimeout(timer)
+    },[])
   const vans = CustormHook();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -25,6 +31,17 @@ const HostVan = () => {
   return (
     <div>
      <SecondNav/>
+     {isLoading ? (
+      <div className="w-full text-center pt-36">
+          <SpinnerRoundFilled
+            speed={50}
+            height={"100px"}
+            width={"100px"}
+            color="rgba(172, 85, 57, 1)"
+            className="mx-auto mt-5 md:mt-0"
+          />
+        </div>
+     ):(
       <div className="container mb-5 mt-5 h-auto bg-orange-50 py-5">
         <div>
           <ul className="flex gap-3 mt-3">
@@ -75,6 +92,8 @@ const HostVan = () => {
           </div>
         ))}
       </div>
+
+     )}
       <Footer />
     </div>
   );

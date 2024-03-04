@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import SecondNav from "../Components/SecondNav";
+import { SpinnerRoundFilled } from "spinners-react";
 
 const HoseReview = () => {
+  const [isLoading, setisLoading] = useState(true)
+  useEffect(()=>{
+    const timer=setTimeout(()=>setisLoading(false),2000)
+    return()=>clearTimeout(timer)
+  },[])
   const ratings = [
     { stars: 5, percentage: 100, color:" bg-orange-500" },
     { stars: 4, percentage: 0, color: "bg-zinc-200" },
@@ -16,6 +22,17 @@ const HoseReview = () => {
   return (
     <div>
       <SecondNav/>
+      {isLoading ? (
+        <div className="w-full text-center pt-36">
+        <SpinnerRoundFilled
+          speed={50}
+          height={"100px"}
+          width={"100px"}
+          color="rgba(172, 85, 57, 1)"
+          className="mx-auto mt-5 md:mt-0"
+        />
+      </div>
+      ):(
       <div className="mt-5 mb-5  py-5 h-auto bg-orange-50 px-3">
         <div>
           <ul className="flex gap-3">
@@ -89,6 +106,8 @@ const HoseReview = () => {
             <hr />
             </div>
       </div>
+
+      )}
       <Footer/>
     </div>
   );

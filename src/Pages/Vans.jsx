@@ -14,7 +14,6 @@ const Vans = () => {
     axios
       .get(baseUrl + "api/vans")
       .then((res) => {
-        console.log(res.data, "find data");
         setVans(res.data);
         setIsloading(false);
       })
@@ -31,10 +30,6 @@ const Vans = () => {
     "bg-green-800",
     "bg-green-900",
   ];
-  // const [viewImg, setViewImg] = useState(null);
-  // const [price, setprice] = useState("");
-  // const [name, setname] = useState("");
-  // const [btnVan, setBtnVan] = useState("");
   const handleViews = (imageUrl, price, name, type, color) => {
     let getData = {
       price: price,
@@ -50,9 +45,9 @@ const Vans = () => {
       <Navbar />
 
       {isloading ? (
-        <div className="w-full text-center pt-36">
-          <SpinnerRoundFilled speed={50} color="rgba(172, 85, 57, 1)"  className="mx-auto mt-5 md:mt-0 h-50 w-50 " />
-        </div>
+       <div className="w-full text-center pt-36">
+  <SpinnerRoundFilled speed={50} height={"100px"} width={"100px"} color="rgba(172, 85, 57, 1)" className="mx-auto mt-5 md:mt-0" />
+</div>
       ) : (
         
         <div className="container mb-5 mt-20 h-auto px-4 py-2 bg-orange-50 ">

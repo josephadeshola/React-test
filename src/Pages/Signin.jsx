@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,10 +7,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import baseUrl from "../BaseUrl";
 import { toast } from "react-toastify";
+import { SpinnerRoundFilled } from "spinners-react";
 
 const Signin = () => {
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false)
+  const [isLoading, setisLoading] = useState(true)
+  useEffect(()=>{
+    const timer=setTimeout(()=>setisLoading(false),2000)
+    return()=>clearTimeout(timer)
+  },[])
 const togglePasswordVisibility=()=>{
   setShowPass(!showPass);
 }
@@ -50,6 +56,17 @@ const togglePasswordVisibility=()=>{
   return (
     <div>
       <Navbar />
+      {isLoading ? (
+        <div className="w-full text-center pt-36">
+          <SpinnerRoundFilled
+            speed={50}
+            height={"100px"}
+            width={"100px"}
+            color="rgba(172, 85, 57, 1)"
+            className="mx-auto mt-5 md:mt-0"
+          />
+        </div>
+      ):(
       <div className="container bg-orange-50 h-full mt-5 py-5">
         <div className="mb-5 ">
           <form action="" onSubmit={formik.handleSubmit}>
@@ -105,6 +122,9 @@ const togglePasswordVisibility=()=>{
           </form>
         </div>
       </div>
+
+      )
+    }
       <Footer />
     </div>
   );

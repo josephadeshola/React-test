@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import SecondNav from "../Components/SecondNav";
 import axios from "axios";
 import baseUrl from "../BaseUrl";
+import { SpinnerRoundFilled } from "spinners-react";
 
 const Profile = () => {
   const getuser = JSON.parse(localStorage.getItem("alluser"));
+  const [isLoading, setisLoading] = useState(true)
+  useEffect(()=>{
+    const timer=setTimeout(()=>setisLoading(false),2000)
+    return()=>clearTimeout(timer)
+  },[])
   const [data, setdata] = useState({
     firstname: getuser ? getuser.firstname : "",
     lastname: getuser ? getuser.lastname : "",
@@ -32,7 +38,19 @@ const Profile = () => {
   return (
     <div>
       <SecondNav />
-      <div
+      {isLoading ? (
+        <div className="w-full text-center pt-36">
+          <SpinnerRoundFilled
+            speed={50}
+            height={"100px"}
+            width={"100px"}
+            color="rgba(172, 85, 57, 1)"
+            className="mx-auto mt-5 md:mt-0"
+          />
+        </div>
+      ):(
+        <div>
+    <div
         class="modal fade"
         id="exampleModal"
         tabindex="-1"
@@ -120,6 +138,9 @@ const Profile = () => {
           <span className="text-sm">Edit</span>
         </i>
       </div>
+        </div>
+      )}
+  
     </div>
   );
 };

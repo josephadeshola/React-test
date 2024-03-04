@@ -8,7 +8,6 @@ import SecondNav from "../Components/SecondNav";
 
 const HostvanView = () => {
   const { id } = useParams();
-
   const [activeTab, setActiveTab] = useState("details");
   const [Vans, setVans] = useState([]);
   useEffect(() => {

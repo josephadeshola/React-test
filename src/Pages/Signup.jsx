@@ -37,7 +37,6 @@ const Signup = () => {
         .post(baseUrl + "user/register", values)
         .then((res) => {
           if (res.data.status == true) {
-            console.log("myresponse", res);
             setTimeout(() => {
               navigate("/login");
             }, 5000);
@@ -47,7 +46,6 @@ const Signup = () => {
           }
         })
         .catch((err) => {
-          console.log(err);
           if (err.response) {
             toast.error(err.response.data.message);
           } else if (err.request) {
